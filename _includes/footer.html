@@ -1,0 +1,106 @@
+<footer>
+
+<div id="container_3" class="grid-container">
+    
+    <div id="secondColumn" class="grid-100">
+        <div id="navigator">
+        <svg id="navSvg" width="543" height="41" style="display: block; margin: auto;">
+        </svg>
+        <div id="navLabelGroup">
+        <i class="fa fa-caret-up" style=";vertical-align: top; font-size: 13px; color: #95F22E;"></i>
+        <span id="navLabel">Home</span>
+        </div>
+        </div>
+    </div>
+    
+</div>
+
+</footer>
+
+<script>
+    
+    new WOW().init();
+    
+    var s = Snap("#navSvg");
+    s.attr({
+        fill: "none",
+        stroke: "#fff",
+        strokeWidth: 1
+    });
+    
+    var diffX = 18;
+    var x = 1;
+    var y = 40;
+    
+    
+    //drawing the bigger line
+    h = 1
+    s.path(Snap.format("M{x} {y} V{dim.height}", {
+    x: x,
+    y: y,
+    dim: {
+        height: h,
+    }
+    })).attr({
+        stroke: "#95F22E",
+    });
+
+    //drawing the complete scale from here
+    
+    for(var j=0; j<3; j++){
+
+    // drawing four small lines
+    for(var i=0; i<6; i++){
+        x = x + diffX
+        h = 30
+        s.path(Snap.format("M{x} {y} V{dim.height}", {
+        x: x,
+        y: y,
+        dim: {
+            height: h,
+        }
+        }));
+    }
+
+    /* drawing the middle line
+    x = x + diffX
+    h = 30
+    s.path(Snap.format("M{x} {y} V{dim.height}", {
+    x: x,
+    y: y,
+    dim: {
+        height: h,
+    }
+    }));
+    */
+    /*
+    // drawing four small lines
+    for(var i=0; i<4; i++){
+        x = x + diffX
+        h = 30
+        s.path(Snap.format("M{x} {y} V{dim.height}", {
+        x: x,
+        y: y,
+        dim: {
+            height: h,
+        }
+        }));
+    }
+    */
+    //drawing the bigger line
+    x = x + diffX
+    h = 10
+    s.path(Snap.format("M{x} {y} V{dim.height}", {
+    x: x,
+    y: y,
+    dim: {
+        height: h,
+    }
+    }));
+        
+    }
+    
+    
+    
+    
+</script>
